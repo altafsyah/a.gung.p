@@ -1,4 +1,6 @@
 import Navbar from "@/components/navbar";
+import ProjectCard from "@/components/project-card";
+import Image from "next/image";
 
 export default function Projects() {
   return (
@@ -14,14 +16,13 @@ export default function Projects() {
           id="projectCards"
           className="mt-10 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-x-14 gap-y-10 place-items-center md:place-items-start"
         >
-          <div className="w-[300px] h-[300px] bg-red-400"></div>
-          <div className="w-[300px] h-[300px] bg-red-400"></div>
-          <div className="w-[300px] h-[300px] bg-red-400"></div>
-          <div className="w-[300px] h-[300px] bg-red-400"></div>
-          <div className="w-[300px] h-[300px] bg-red-400"></div>
-          <div className="w-[300px] h-[300px] bg-red-400"></div>
-          <div className="w-[300px] h-[300px] bg-red-400"></div>
-          <div className="w-[300px] h-[300px] bg-red-400"></div>
+          <ProjectCard imageUrl='/project-1.png' />
+          <ProjectCard imageUrl='/project-2.png' />
+          <ProjectCard imageUrl='/project-3.png' />
+          <ProjectCard imageUrl='/project-4.png' />
+          <ProjectCard imageUrl='/project-5.png' />
+          <ProjectCard imageUrl='/project-6.png' />
+          <ProjectCard imageUrl='/project-7.png' />
         </div>
       </section>
     </section>
