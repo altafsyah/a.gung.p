@@ -6,7 +6,7 @@ export default function ExpertiseCard(props) {
       <Image src={props.imageUrl} fill={true} />
       <div className="w-full h-full absolute bg-gradient-to-t to-transparent from-[#4C2B2B] top-0 left-0">
         <h1 className="absolute bottom-6 left-6 text-2xl">
-          Interior
+          {props.title}
           <br />
           Design.
         </h1>

@@ -1,9 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import ExpertiseCard from "@/components/expertise-card";
 import ProjectOverview from "@/components/project-overview";
 import SectionTitle from "@/components/section-title";
 import Navbar from "@/components/navbar";
 import Link from "next/link";
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
 
 export default function Home() {
   return (
@@ -39,9 +45,12 @@ export default function Home() {
           id="expertiseCards"
           className="grid grid-cols-1 xl:grid-cols-3 gap-10 md:gap-24 mt-10 md:mt-24"
         >
-          <ExpertiseCard imageUrl="/expertise-interior.png" />
-          <ExpertiseCard imageUrl="/expertise-exterior.png" />
-          <ExpertiseCard imageUrl="/expertise-landscape.png" />
+          <ExpertiseCard imageUrl="/expertise-interior.png" title="Interior" />
+          <ExpertiseCard imageUrl="/expertise-exterior.png" title="Exterior" />
+          <ExpertiseCard
+            imageUrl="/expertise-landscape.png"
+            title="Landscape"
+          />
         </div>
       </section>
       <section id="project" className="xl:mx-40 px-10 mb-32">
@@ -51,7 +60,26 @@ export default function Home() {
             View All
           </Link>
         </div>
-        <ProjectOverview />
+        <Swiper spaceBetween={50} slidesPerView={1} loop={true} modules={[Autoplay]} autoplay>
+          <SwiperSlide>
+            <ProjectOverview
+              title="Altaf's Room"
+              imageUrl="/featured-project-1.png"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectOverview
+              title="Liberty Coffee"
+              imageUrl="/featured-project-2.png"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectOverview
+              title="Askara Office"
+              imageUrl="/featured-project-3.png"
+            />
+          </SwiperSlide>
+        </Swiper>
       </section>
       {/* <section id="about" className="mx-40 mb-32">
         <SectionTitle no="03" title="About Me" />
